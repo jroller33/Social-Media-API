@@ -18,7 +18,7 @@ Includes Reactions as the reaction field's subdocument schema in the Thought mod
 Uses functionality to format queried timestamps properly.
 
 
- Models: 
+    --- Models:  ---
 
 User
     - username- String, Unique, Required, Trimmed
@@ -53,7 +53,9 @@ Reaction (SCHEMA ONLY)
 
     - Schema Settings, This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
 
---- API Routes: ---
+
+
+    --- API Routes: ---
 
 /api/users
     - GET all users
