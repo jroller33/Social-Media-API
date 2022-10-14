@@ -3,8 +3,10 @@
 ## 🚧 Under development 🚧
 
 
-Project req'mts:
-`
+Project req'mts: <br/>
+```
+
+
 Uses the Mongoose packageLinks to an external site. to connect to a MongoDB database.
 
 Includes User and Thought models outlined in the Challenge instructions.
@@ -16,40 +18,40 @@ Includes Reactions as the reaction field's subdocument schema in the Thought mod
 Uses functionality to format queried timestamps properly.
 
 
---- Models: ---
+ Models: 
 
 User
-    username- String, Unique, Required, Trimmed
+    - username- String, Unique, Required, Trimmed
     
-    email- String, Required, Unique, Must match a valid email address (look into Mongoose's matching validation)
+    - email- String, Required, Unique, Must match a valid email address (look into Mongoose's matching validation)
    
-    thoughts- Array of _id values referencing the Thought model
+    - thoughts- Array of _id values referencing the Thought model
    
-    friends- Array of _id values referencing the User model (self-reference)
+    - friends- Array of _id values referencing the User model (self-reference)
    
-    Schema Settings- Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
+    - Schema Settings- Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
 Thought
-    thoughtText- String, Required, Must be between 1 and 280 characters
+    - thoughtText- String, Required, Must be between 1 and 280 characters
    
-    createdAt- Date, Set default value to the current timestamp, Use a getter method to format the timestamp on query
+    - createdAt- Date, Set default value to the current timestamp, Use a getter method to format the timestamp on query
     
-    username (The user that created this thought)- String, Required,
+    - username (The user that created this thought)- String, Required,
     
-    reactions (These are like replies)- Array of nested documents created with the reactionSchema
+    - reactions (These are like replies)- Array of nested documents created with the reactionSchema
     
-    Schema Settings- Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+    - Schema Settings- Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
 
 Reaction (SCHEMA ONLY)
-    reactionId - Use Mongoose's ObjectId data type, Default value is set to a new ObjectId
+    - reactionId - Use Mongoose's ObjectId data type, Default value is set to a new ObjectId
 
-    reactionBody-String, Required, 280 character maximum, 
+    - reactionBody-String, Required, 280 character maximum, 
     
-    username, String, Required
+    - username, String, Required
 
-    createdAt- Date, Set default value to the current timestamp, Use a getter method to format the timestamp on query
+    - createdAt- Date, Set default value to the current timestamp, Use a getter method to format the timestamp on query
 
-    Schema Settings, This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
+    - Schema Settings, This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
 
 --- API Routes: ---
 
@@ -88,4 +90,4 @@ Reaction (SCHEMA ONLY)
     - DELETE to pull and remove a reaction by the reaction's reactionId value
 
 
-`
+```
