@@ -59,7 +59,7 @@ Reaction (SCHEMA ONLY)
 
 /api/users
     - GET all users
-    - GEt a single user by its _id and populated thought and friend data
+    - GEt a single user by its _id and get its populated thought and friend data
     - POST a new user
     - example data:
         {
