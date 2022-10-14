@@ -5,17 +5,17 @@ const formatDate = require("../utils/helpers");
 
 const thoughtSchema = new Schema(
     {
-        thoughtText: {
+        thoughtText: {        // DONE
             type: String,
             required: true,
             minLength: 1,
             maxLength: 280
         },
-        userName: {
+        userName: {      // DONE
             type: String,
             required: true
         },
-        userId: {
+        userId: {      // DONE
             type: mongoose.Types.ObjectId,
             required: true
         },
@@ -29,14 +29,14 @@ const thoughtSchema = new Schema(
         thoughtReactions: [reactions],
     },
     {
-        toJSON: {
+        toJSON: {      // DONE
             getters: true,
             virtuals: true
         },
     }
 );
 
-thoughtSchema.virtual("reactionCount").get(function() {
+thoughtSchema.virtual("reactionCount").get(function() {      // DONE
     return this.thoughtReactions?.length;
 });
 
