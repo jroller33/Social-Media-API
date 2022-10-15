@@ -31,19 +31,20 @@ module.exports = {
             .catch(err => res.status(500).json(err))
     },
 
-    updateThought: function (req, res) {
+    updateThought: function (req, res) {    // PUT thought
         db.Thought
             .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },
 
-    addReaction: function (req, res) {
+    addReaction: function (req, res) {  // PUT thought to add new reaction data
         db.Thought
+            .findOneAndUpdate({ })
     }
 
     // removeReaction
 
     // DELETE thought
 
-    
+
