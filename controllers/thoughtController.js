@@ -32,20 +32,21 @@ module.exports = {
     },
 
 
-    updateThought: function (req, res) {    // PUT thought
+    updateThought: function (req, res) {    // PUT: update thought
         db.Thought
             .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },
 
-    addReaction: function (req, res) {  // PUT thought to add reaction data
+    addReaction: function (req, res) {  // PUT: update thought to add reaction data
         db.Thought
             .findOneAndUpdate({ _id: req.params.id }, { $addToSet: {
             thoughtReactions: req.body } }, { new: true })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },
+    
     // PUT a thought to remove its reaction data
     removeReaction: function (req, res) {
         db.Thought
@@ -53,6 +54,7 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },
+
     // DELETE a thought and remove its id from the userThoughts array
     deleteThought: function (req, res) {
         db.Thought
