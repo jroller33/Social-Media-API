@@ -3,6 +3,13 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
+        userName: {      // DONE
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
+        
         email: {      // DONE
             type: String,
             required: true,
@@ -10,12 +17,7 @@ const userSchema = new Schema(
             trim: true,
             match: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         },
-        userName: {      // DONE
-            type: String,
-            required: true,
-            unique: true,
-            trim: true
-        },
+
         userThoughts: [      // DONE
             {
                 type: mongoose.Types.ObjectId,

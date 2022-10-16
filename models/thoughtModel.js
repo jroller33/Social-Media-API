@@ -10,20 +10,24 @@ const thoughtSchema = new Schema(
             minLength: 1,
             maxLength: 280
         },
-        userName: {      // DONE
-            type: String,
-            required: true
-        },
-        userId: {      // DONE
-            type: mongoose.Types.ObjectId,
-            required: true
-        },
+
         createdAt: {
             type: Date,
             required: true,
             default: Date.now,
             //                  need to put timestamp here
         },
+
+        userName: {      // DONE
+            type: String,
+            required: true
+        },
+        
+        userId: {      // DONE
+            type: mongoose.Types.ObjectId,
+            required: true
+        },
+
 
         thoughtReactions: [reactions],
     },
