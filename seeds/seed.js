@@ -13,7 +13,7 @@ const seedDB = async () => {
 
     for (thought of thoughtSeeds) {                  // loop thru all thoughts
 
-        const user = users[Math.floor(Math.random() * user.length)]      // create random user
+        const user = users[Math.floor(Math.random() * users.length)]      // create random user
 
         const newThought = await Thought.create({           // create new thought and assign to the random user
             ...thought,
