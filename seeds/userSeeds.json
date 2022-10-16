@@ -1,0 +1,41 @@
+[
+    {
+        "email": "mscott@dundermifflin.com",
+        "userName": "bossman"
+    },
+
+    {
+        "email": "jhalpert@dundermifflin.com",
+        "userName": "wiseguy"
+    },
+
+    {
+        "email": "dschrute@dundermifflin.com",
+        "userName": "assistantregionalmanager"
+    },
+
+    {
+        "email": "shudson@dundermifflin.com",
+        "userName": "didistutter"
+    },
+
+    {
+        "email": "pbeesley@dundermifflin.com",
+        "userName": "thisispam"
+    },
+
+    {
+        "email": "onunez@dundermifflin.com",
+        "userName": "smartestaccountant"
+    },
+
+    {
+        "email": "amartin@dundermifflin.com",
+        "userName": "catlady"
+    },
+
+    {
+        "email": "kmalone@dundermifflin.com",
+        "userName": "cookiemonster"
+    }
+]
