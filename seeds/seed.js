@@ -4,35 +4,23 @@ const userSeeds = require("./userSeeds.json");
 const thoughtSeeds = require("./thoughtSeeds.json");
 
 connection.once('open', async () => {
-    await 
-}
-
-
-const seedDB = async () => {
-    await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/social-media_db");
-
-    await User.deleteMany({});       // clear the db first
+    await User.deleteMany({});
     await Thought.deleteMany({});
 
-    const users = await User.create(userSeeds);     // seed users
+    await User.insertMany(userSeeds);
 
-    for (thought of thoughtSeeds) {                  // loop thru all thoughts
+    for (thought of thoughtSeeds) { // loop thru all thoughts
+        const user = userSeeds[Math.floor(Math.random() * userSeeds.length)]// create a random user.
 
-        const user = users[Math.floor(Math.random() * users.length)]      // create a random user. ***watchout for "user" vs "users"
-
-        const newThought = await Thought.create({           // create a new thought and assign it to the random user
-            ...thought,
+        const newThought = await Thought.insertMany({
+            ...thought, // create a new thought and assign it to the random user
             userId: user.id,
-            userName: user.userName
-        });
+            userName: user.username
+        })
 
-        await User.findOneAndUpdate({ _id: user.id }, {     // update the random user
-            $addToSet: {
-                userThoughts: newThought._id     // new thought's id is pushed to user's userThoughts array
-            }
-        }, { new: true })
+         // update the random user
+      // new thought's id is pushed to user's userThoughts array
+        await User.findOneAndUpdate({ _id: user.id }, { $addToSet: { userThoughts: newThought }}, {new: true })
     }
-    process.exit(0);    // once the for loop is done, stop the process (seedDB())
-};
-
-seedDB();
+    process.exit(0);  // once the for loop is done, stop the process 
+})
