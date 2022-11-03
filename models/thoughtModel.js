@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Types, model, Schema } = require("mongoose");
 const reactions = require("./reactionModel");
+const dayjs = require("dayjs");
 
 const thoughtSchema = new Schema(
     {
@@ -15,19 +15,22 @@ const thoughtSchema = new Schema(
             type: Date,
             required: true,
             default: Date.now,
-            //                  need to put timestamp here
+            get: (date) => {
+                return dayjs(date).format("DD/MM/YYYY");
+            }
         },
 
         userName: {      // DONE
             type: String,
             required: true
         },
-        
-        userId: {      // DONE
-            type: mongoose.Types.ObjectId,
-            required: true
-        },
 
+        //                   *********** is userId needed  ????
+
+        // userId: {      // DONE
+        //     type: mongoose.Types.ObjectId,
+        //     required: true
+        // },
 
         thoughtReactions: [reactions],
     },
@@ -36,6 +39,7 @@ const thoughtSchema = new Schema(
             getters: true,
             virtuals: true
         },
+        id: false,
     }
 );
 
@@ -43,5 +47,5 @@ thoughtSchema.virtual("reactionCount").get(function() {      // DONE
     return this.thoughtReactions?.length;
 });
 
-const Thought = mongoose.model("Thought", thoughtSchema);
+const Thought = model("Thought", thoughtSchema);
 module.exports = Thought;

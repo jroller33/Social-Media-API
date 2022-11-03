@@ -20,7 +20,7 @@ const reactionSchema = new Schema({
             type: Date,
             default: Date.now,
             get: (date) => {
-                return day
+                return dayjs(date).format("DD/MM/YYYY");
             }
         }
     },
@@ -28,6 +28,7 @@ const reactionSchema = new Schema({
         toJSON: {
             getters: true
         },
+        id: false,
     }
 );
 
