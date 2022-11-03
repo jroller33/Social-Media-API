@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const thoughtController = require("../controllers/thoughtController");
+const thoughtController = require("../../controllers/thoughtController");
 
 router.route("/post")                // POST new thought
     .post(thoughtController.create);
