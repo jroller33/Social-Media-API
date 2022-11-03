@@ -7,7 +7,8 @@ Project req'mts: <br/>
 ```
 
 
-Uses the Mongoose packageLinks to an external site. to connect to a MongoDB database.
+Uses the Mongoose packageto connect to a MongoDB database.
+Links to an external site. 
 
 Includes User and Thought models outlined in the Challenge instructions.
 

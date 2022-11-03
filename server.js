@@ -12,5 +12,5 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/social-media_db");
 
 app.listen(PORT, () =>
-  console.log(`Server now listening on http://localhost:${PORT}/`)
+  console.log(`Server listening on http://localhost:${PORT}/`)
 );

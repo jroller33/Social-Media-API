@@ -13,21 +13,21 @@ const seedDB = async () => {
 
     for (thought of thoughtSeeds) {                  // loop thru all thoughts
 
-        const user = users[Math.floor(Math.random() * users.length)]      // create random user
+        const user = users[Math.floor(Math.random() * users.length)]      // create a random user. ***watchout for "user" vs "users"
 
-        const newThought = await Thought.create({           // create new thought and assign to the random user
+        const newThought = await Thought.create({           // create a new thought and assign it to the random user
             ...thought,
             userId: user.id,
             userName: user.userName
         });
 
-        await User.findOneAndUpdate({ _id: user.id }, {     // update random user
+        await User.findOneAndUpdate({ _id: user.id }, {     // update the random user
             $addToSet: {
                 userThoughts: newThought._id     // new thought's id is pushed to user's userThoughts array
             }
         }, { new: true })
     }
-    process.exit(0);
+    process.exit(0);    // once the for loop is done, stop the process (seedDB())
 };
 
 seedDB();
