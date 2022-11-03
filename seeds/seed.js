@@ -1,7 +1,12 @@
-const mongoose = require("mongoose");
+const connection = require('../config/connection');
 const { Thought, User } = require("../models");
 const userSeeds = require("./userSeeds.json");
 const thoughtSeeds = require("./thoughtSeeds.json");
+
+connection.once('open', async () => {
+    await 
+}
+
 
 const seedDB = async () => {
     await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/social-media_db");
