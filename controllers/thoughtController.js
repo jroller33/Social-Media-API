@@ -1,4 +1,4 @@
-const db = require("../models");
+const { User, Thought } = require("../models");
 
 module.exports = {
     create: function (req, res) {       // POST new thought
