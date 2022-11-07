@@ -1,41 +1,41 @@
 [
     {
         "email": "mscott@dundermifflin.com",
-        "userName": "bossman"
+        "username": "bossman"
     },
 
     {
         "email": "jhalpert@dundermifflin.com",
-        "userName": "wiseguy"
+        "username": "wiseguy"
     },
 
     {
         "email": "dschrute@dundermifflin.com",
-        "userName": "assistantregionalmanager"
+        "username": "assistantregionalmanager"
     },
 
     {
         "email": "shudson@dundermifflin.com",
-        "userName": "didistutter"
+        "username": "didistutter"
     },
 
     {
         "email": "pbeesley@dundermifflin.com",
-        "userName": "thisispam"
+        "username": "thisispam"
     },
 
     {
         "email": "onunez@dundermifflin.com",
-        "userName": "smartestaccountant"
+        "username": "smartestaccountant"
     },
 
     {
         "email": "amartin@dundermifflin.com",
-        "userName": "catlady"
+        "username": "catlady"
     },
 
     {
         "email": "kmalone@dundermifflin.com",
-        "userName": "cookiemonster"
+        "username": "cookiemonster"
     }
 ]
